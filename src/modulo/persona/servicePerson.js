@@ -1,3 +1,5 @@
+const conexion = require('../../database/mysql')
+
 function todos(tabla){
     return new Promise((resolve, reject)=>{
         conexion.query(`SELECT * FROM ${tabla}`,(error,result)=>{
