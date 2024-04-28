@@ -6,7 +6,7 @@ const roouter = express.Router();
 
 roouter.get('/:id',uno);
 roouter.get('/',todos);
-roouter.post('/',agregar);
+roouter.post('/add',agregar);
 roouter.put('/',eliminar);
 
 
