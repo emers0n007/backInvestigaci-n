@@ -1,11 +1,12 @@
 const mysql = require('mysql');
-const config = require('../config');
+const config = require('../../config');
 
 const dbConfig = {
     host:config.mysql.host,
     user:config.mysql.user,
     password:config.mysql.password,
     database:config.mysql.database,
+    port:config.mysql.sqlport,
 }
 
 let conexion;
@@ -14,6 +15,7 @@ function conexionMySql(){
     conexion = mysql.createConnection(dbConfig);
     conexion.connect((err)=>{
         if(err){
+            console.log('EROOOOOOOOOOOOOR')
             console.log('[db error]', err);
             setTimeout(conexionMySql(),200);
         }else{
@@ -32,3 +34,4 @@ function conexionMySql(){
 
 conexionMySql();
 
+exports.module = conexion;
