@@ -8,6 +8,7 @@ module.exports={
         host: process.env.MYSQL_HOST || 'viaduct.proxy.rlwy.net',
         user: process.env.MYSQL_USER || 'root',
         password: process.env.MYSQL_PASSWORD || 'RVnlJWcAvSamyUKKsCUnJLqeGcPeKcFr',
-        database: process.env.MYSQL_DB || 'railway'
+        database: process.env.MYSQL_DB || 'railway',
+        port: process.env.MYSQL_PORT || 35504
     }
 }

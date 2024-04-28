@@ -1,4 +1,5 @@
 const db = require('./servicePerson');
+const mysql = require('../../database/mysql');
 
 const TABLA = 'Persona';
 

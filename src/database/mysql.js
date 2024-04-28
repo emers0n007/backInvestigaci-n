@@ -6,6 +6,7 @@ const dbConfig = {
     user:config.mysql.user,
     password:config.mysql.password,
     database:config.mysql.database,
+    port:config.mysql.sqlport,
 }
 
 let conexion;
@@ -15,6 +16,7 @@ function conexionMySql(){
     conexion = mysql.createConnection(connection);
     conexion.connect((err)=>{
         if(err){
+            console.log('EROOOOOOOOOOOOOR')
             console.log('[db error]', err);
             //setTimeout(conexionMySql, 200);
 

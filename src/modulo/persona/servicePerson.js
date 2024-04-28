@@ -3,6 +3,7 @@ const conexion = require('../../database/mysql')
 function todos(tabla){
     return new Promise((resolve, reject)=>{
         conexion.query(`SELECT * FROM ${tabla}`,(error,result)=>{
+            console.log("llegas")
             return error ? reject(error) : resolve(result);
         });
     });
