@@ -16,9 +16,8 @@ function conexionMySql(){
     conexion = mysql.createConnection(connection);
     conexion.connect((err)=>{
         if(err){
-            console.log('EROOOOOOOOOOOOOR')
             console.log('[db error]', err);
-            //setTimeout(conexionMySql, 200);
+            setTimeout(conexionMySql, 200);
 
         }else{
             console.log('DB Conectada');
