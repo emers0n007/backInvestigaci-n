@@ -35,7 +35,7 @@ function insertPersona(tabla, data) {
 
 function actualizar(tabla, data) {
     return new Promise((resolve, reject) => {
-        conexion.query(`UPDATE ${tabla} SET ? WHERE id= ?`, [data, data.id], (error, result) => {
+        conexion.query(`UPDATE ${tabla} SET ? WHERE id_person= ?`, [data, data.id_persona], (error, result) => {
             return error ? reject(error) : resolve(result);
         });
     });
@@ -48,7 +48,7 @@ function agregar(tabla, datos) {
 
 function eliminar(tabla, data) {
     return new Promise((resolve, reject) => {
-        conexion.query(`DELETE FROM ${tabla} WHERE id= ?`, data.id, (error, result) => {
+        conexion.query(`DELETE FROM ${tabla} WHERE id_persona= ?`, data.id_persona, (error, result) => {
             return error ? reject(error) : resolve(result);
         });
     });
