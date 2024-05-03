@@ -2,7 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const config = require('./config');
 const cors = require("cors");
-const persona = require('./src/modulo/persona/rutasPersona');
+const persona = require('./src/module/person/Routes');
 const error = require('./src/red/errors');
 
 const app = express();
