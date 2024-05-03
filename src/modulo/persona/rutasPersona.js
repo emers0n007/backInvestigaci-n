@@ -7,7 +7,7 @@ const roouter = express.Router();
 roouter.get('/:id',uno);
 roouter.get('/',todos);
 roouter.post('/add',agregar);
-roouter.put('/',eliminar);
+roouter.delete('/delete',eliminar);
 
 
 async function todos(req, res, next){
@@ -31,12 +31,8 @@ async function uno(req, res){
 async function agregar(req, res, next){
     try{
         const items = await controlador.agregar(req.body);
-        if(req.body.id == 0){
-            mensage = 'guardado';
-        }else{
-            mensage = 'actualizado';
-        }
-        respuestas.success(req, res, mensage, 201);
+            const menssage = 'guardado';
+        respuestas.success(req, res, menssage, 201);
     }catch(err){
         next(err);
     }  
