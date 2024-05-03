@@ -18,7 +18,7 @@ function uno(tabla, id) {
 }
 
 function insertPersona(tabla, data) {
-    console.log("DATA FUNCIÓN INSERT", data);
+    console.log("DATA FUNCIÓN INSERT", data, tabla);
 
     const valores = Object.keys(data) // Obtiene los nombres de las propiedades del objeto
         .map(key => `'${data[key]}'`) // Crea un arreglo con los valores entre comillas simples

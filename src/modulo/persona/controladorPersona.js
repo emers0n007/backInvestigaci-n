@@ -1,7 +1,7 @@
 const db = require('./servicePerson');
 const mysql = require('../../database/mysql');
 
-const TABLA = 'Persona';
+const TABLA = 'person';
 
 
 module.exports = function (dbInyectada) {
@@ -19,6 +19,7 @@ module.exports = function (dbInyectada) {
     }
     
     function agregar(body){
+        console.log("Tabla:", TABLA)
         return db.agregar(TABLA, body);
     }
     
