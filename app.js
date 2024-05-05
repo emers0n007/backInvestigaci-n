@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const config = require('./config');
 const cors = require("cors");
 const persona = require('./src/module/person/Routes');
+const user = require('./src/module/user/Routes');
 const error = require('./src/red/errors');
 
 const app = express();
@@ -17,6 +18,7 @@ app.set('port', config.app.port);
 
 //rutas
 app.use('/api/persona', persona);
+app.use('/api/user', user);
 app.use(error);
 
 app.use(
