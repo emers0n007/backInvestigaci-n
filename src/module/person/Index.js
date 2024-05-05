@@ -1,4 +1,4 @@
-const db = require('./ServicePerson');
+const db = require('./servicePerson');
 const ctrl = require('./ControllerPerson');
 
 

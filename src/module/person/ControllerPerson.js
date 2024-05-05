@@ -5,7 +5,7 @@ module.exports = function (dbInyectada) {
     let db = dbInyectada
 
     if (!db) {
-        db = require('./ServicePerson');
+        db = require('./servicePerson');
     }
     function todos() {
         return db.todos(TABLA);

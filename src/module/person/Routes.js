@@ -1,6 +1,6 @@
 const express = require('express');
 const respuestas = require('../../red/respuestas');
-const controlador = require('./Index');
+const controlador = require('./index');
 
 const roouter = express.Router();
 
