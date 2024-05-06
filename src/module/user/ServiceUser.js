@@ -1,5 +1,4 @@
 const connection = require("../../database/MySql");
-const { error } = require("../../red/respuestas");
 
 function searhAllUsers(table) {
     return new Promise((resolve, reject) => {
@@ -27,8 +26,18 @@ function addUser(table, data) {
     });
 }
 
+function disableUser(table, data) {
+    return new Promise((reject, resolve) => {
+        connection.query(`DELETE FROM ${table} WHERE id_user = ${data.id_user}`, (error, result) => {
+            return error ? reject(error) : resolve(result);
+        });
+    });
+}
+
+
 module.exports = {
     searhAllUsers,
     searhOneUser,
-    addUser
+    addUser,
+    disableUser
 }
