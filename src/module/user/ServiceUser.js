@@ -15,9 +15,10 @@ function searhOneUser(table, id, nickname) {
 }
 
 function addUser(table, data) {
+    console.log("USUARIO: ", data);
     const values = Object.keys(data).map(key => `'${data[key]}'`).join(",");
 
-    const query = `INSERT INTO ${table} (${Object.keys(data).join(",")}) SELECT id_person, ${values} FROM person WHERE person_type = "Usuario"`;
+    const query = `INSERT INTO ${table} (id_person,${Object.keys(data).join(",")}) SELECT id_person, ${values} FROM person WHERE person_type = "Usuario" AND NOT EXISTS (SELECT 1 FROM ${table} WHERE ${table}.id_person = person.id_person)`;
 
     return new Promise((resolve, reject) => {
         connection.query(query, (error, result) => {

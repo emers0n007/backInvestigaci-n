@@ -20,10 +20,23 @@ async function searhAllUsers(req, res) {
 
 async function addUser(req, res) {
     try {
-        const items = await controller.addUser();
-        reply.success(req, res, items, 200);
+        const items = await controller.addUser(req.body);
+        const menssage = "Guardado";
+        reply.success(req, res, menssage, 201);
     } catch (error) {
-        reply.error(req, res, 500);
+        console.log(error);
+        reply.error(req, res, error, 500);
+    }
+}
+
+async function disableUser(req, res) {
+    try {
+        const items = await controller.disableUser(req.body);
+        const menssage = "eliminado";
+        reply.success(req, res, menssage, 201);
+    } catch (error) {
+        console.log(error);
+        reply.error(req, res, error, 500);
     }
 }
 
